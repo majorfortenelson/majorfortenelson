@@ -31,6 +31,7 @@ TEMPLATE = """<!DOCTYPE html>
 <meta charset="utf-8">
 <title>{page_title}</title>
 <link rel="stylesheet" href="style.css">
+<script src="colors.js"></script>
 </head>
 <body>
 <div class="page">

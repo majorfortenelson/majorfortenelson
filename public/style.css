@@ -9,6 +9,18 @@ body {
 a { color: #000099; }
 a:visited { color: #464646; }
 
+/* Box colors. colors.js replaces these with a random scheme on every page load;
+   these are the fallback if JavaScript is off. */
+:root {
+  --btn: #6d6da5;
+  --btn-light: #c9c9dd;
+  --btn-dark: #3d3d5e;
+  --btn-shadow: #2a2a45;
+  --btn-hover: #7a7ab3;
+  --bar1: #ffcc33;
+  --bar2: #ff9922;
+}
+
 .page { display: flex; align-items: flex-start; }
 
 /* Left column of raised buttons */
@@ -20,20 +32,20 @@ a:visited { color: #464646; }
   box-sizing: border-box;
   margin-bottom: 1px;
   padding: 0 0 0 4px;
-  background: #c154c1; /* Fuchsia */
+  background: var(--btn);
   border: 1px solid;
-  border-color: #e8b4e8 #7a2f7a #7a2f7a #e8b4e8;
+  border-color: var(--btn-light) var(--btn-dark) var(--btn-dark) var(--btn-light);
   box-shadow: 0 0 0 1px #9a9a9a;
   color: #fff;
   font: bold 11px/18px Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: -0.02em;
   text-decoration: none;
-  text-shadow: 1px 1px 0 #5a1f5a;
+  text-shadow: 1px 1px 0 var(--btn-shadow);
   white-space: nowrap;
   overflow: hidden;
 }
-.nav a:hover { background: #cd6acd; }
-.nav a:active { border-color: #7a2f7a #e8b4e8 #e8b4e8 #7a2f7a; }
+.nav a:hover { background: var(--btn-hover); }
+.nav a:active { border-color: var(--btn-dark) var(--btn-light) var(--btn-light) var(--btn-dark); }
 
 .main { width: 300px; flex: none; }
 
@@ -53,8 +65,8 @@ a:visited { color: #464646; }
 .hero { display: block; width: 300px; height: auto; }
 
 .bar { margin: 0; padding: 4px 7px; font-size: 13px; line-height: 16px; }
-.bar.new { background: #ffcff1; /* Shampoo */ margin-top: 15px; }
-.bar.cta { background: #ffd8f0; /* Lace */ }
+.bar.new { background: var(--bar1); margin-top: 15px; }
+.bar.cta { background: var(--bar2); }
 
 .title { font: 22px Times, "Times New Roman", serif; margin: 0 0 18px; }
 .content { line-height: 1.5; }
