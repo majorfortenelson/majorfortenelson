@@ -38,7 +38,7 @@ TEMPLATE = """<!DOCTYPE html>
 {nav}
 </div>
 <div class="main">
-<a class="masthead" href="index.html">MAJOR FORTE NELSON</a>
+<a class="masthead" href="index.html" aria-label="Major Forte Nelson">{masthead}</a>
 {body}
 <div class="footer">&copy; mmxxvi mfn</div>
 </div>
@@ -46,6 +46,15 @@ TEMPLATE = """<!DOCTYPE html>
 </body>
 </html>
 """
+
+
+def masthead_html():
+    # One line per word; each letter is its own item so CSS can spread it edge to edge.
+    lines = []
+    for word in ["MAJOR", "FORTE", "NELSON"]:
+        letters = "".join(f"<i>{c}</i>" for c in word)
+        lines.append(f"<span>{letters}</span>")
+    return "".join(lines)
 
 
 def nav_html():
@@ -59,7 +68,7 @@ def nav_html():
 
 
 def write(filename, page_title, body):
-    (OUT / filename).write_text(TEMPLATE.format(page_title=page_title, nav=nav_html(), body=body))
+    (OUT / filename).write_text(TEMPLATE.format(page_title=page_title, nav=nav_html(), masthead=masthead_html(), body=body))
     print("wrote", filename)
 
 

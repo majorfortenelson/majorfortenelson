@@ -37,24 +37,24 @@ a:visited { color: #464646; }
 
 .main { width: 300px; flex: none; }
 
-/* Pale, widely spaced name across the top */
+/* Pale name stacked one word per line; letters spread to the photo's width. */
 .masthead {
   display: block;
-  height: 64px;
+  width: 300px;
   margin: 0 0 17px;
   color: #f3f3f9;
-  font: 40px/64px Helvetica, Arial, sans-serif;
-  letter-spacing: 0.2em;
+  font: 40px/46px Helvetica, Arial, sans-serif;
   text-decoration: none;
-  white-space: nowrap;
 }
 .masthead:visited { color: #f3f3f9; }
+.masthead span { display: flex; justify-content: space-between; }
+.masthead i { font-style: normal; }
 
 .hero { display: block; width: 300px; height: auto; }
 
 .bar { margin: 0; padding: 4px 7px; font-size: 13px; line-height: 16px; }
-.bar.new { background: #ff6fff; /* Ultra Pink */ margin-top: 15px; }
-.bar.cta { background: #e7accf; /* Pink Pearl */ }
+.bar.new { background: #ffcff1; /* Shampoo */ margin-top: 15px; }
+.bar.cta { background: #ffd8f0; /* Lace */ }
 
 .title { font: 22px Times, "Times New Roman", serif; margin: 0 0 18px; }
 .content { line-height: 1.5; }
