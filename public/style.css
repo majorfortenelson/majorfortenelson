@@ -81,3 +81,18 @@ a:visited { color: #464646; }
 .content { line-height: 1.5; }
 
 .footer { margin: 62px 0 40px; color: #c4c4c4; font-size: 11px; }
+
+/* Phones: scale the header, photo and bars to fill the screen beside the buttons.
+   250px desktop sizes map to (screen width - button column - gutter). */
+@media (max-width: 480px) {
+  :root {
+    --content-w: calc(100vw - 115px);
+    --masthead-h: calc((100vw - 115px) * 0.4554);
+    --masthead-gap: 14px;
+  }
+  .nav a { height: 26px; line-height: 24px; } /* bigger tap targets */
+  .masthead { font-size: calc((100vw - 115px) * 0.132); line-height: 1.15; }
+  .hero { height: auto; }
+  .bar { font-size: 12px; line-height: 16px; }
+  .footer { margin-top: 40px; }
+}
