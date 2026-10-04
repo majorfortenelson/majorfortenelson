@@ -36,7 +36,7 @@ a:visited { color: #464646; }
 
 /* Hand-drawn symbols, one beside each line of the name header. */
 .glyphs { height: var(--masthead-h); margin-bottom: var(--masthead-gap); width: 80px; }
-.glyphs svg { display: block; width: 100%; height: calc(var(--masthead-h) / 3); color: #000; }
+.glyphs img { display: block; width: 100%; height: calc(var(--masthead-h) / 3); object-fit: contain; box-sizing: border-box; padding: 4px 2px; }
 .nav a {
   display: block;
   width: 80px; /* fits "Instagram" in real Verdana bold */

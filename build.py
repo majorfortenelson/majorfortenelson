@@ -1,8 +1,6 @@
 """Generate the site's pages from one shared template so the button column stays in sync."""
 from pathlib import Path
 
-import glyphs
-
 OUT = Path(__file__).parent / "public"
 INSTAGRAM = "https://www.instagram.com/majorfortenelson/"
 
@@ -26,6 +24,9 @@ PAGES = {
     "gallery.html": "Gallery",
     "misc.html": "Misc",
 }
+
+# Hand-drawn symbols (cut out of a photo of the drawing), one beside each line of the name.
+GLYPHS = "".join(f'<img src="images/symbol{i}.png" alt="">' for i in (1, 2, 3))
 
 TEMPLATE = """<!DOCTYPE html>
 <html>
@@ -74,7 +75,7 @@ def nav_html():
 
 def write(filename, page_title, body):
     (OUT / filename).write_text(TEMPLATE.format(page_title=page_title, nav=nav_html(), masthead=masthead_html(),
-                                                            glyphs="".join(g() for g in glyphs.ALL), body=body))
+                                                            glyphs=GLYPHS, body=body))
     print("wrote", filename)
 
 
