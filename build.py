@@ -13,7 +13,7 @@ NAV = [
     ("Misc", "misc.html"),
 ]
 
-HOME_BODY = f"""<img class="hero" src="images/home.jpg" width="410" height="598" alt="">
+HOME_BODY = f"""<img class="hero" src="images/home.jpg" width="300" height="437" alt="">
 <p class="bar new"><b>New:</b> <a href="hats.html">Hats</a> | <a href="hoodies.html">Hoodies</a></p>
 <p class="bar cta"><b>Want to see more?</b> Follow along on <a href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram</a>.</p>"""
 

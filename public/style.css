@@ -1,4 +1,4 @@
-/* Classic 2000s personal-site layout: beveled button column + fixed 410px content. */
+/* Classic 2000s personal-site layout: beveled button column + fixed 300px content. */
 body {
   margin: 0;
   background: #fff;
@@ -20,22 +20,22 @@ a:visited { color: #464646; }
   box-sizing: border-box;
   margin-bottom: 1px;
   padding: 0 0 0 4px;
-  background: #6d6da5;
+  background: #c154c1; /* Fuchsia */
   border: 1px solid;
-  border-color: #c9c9dd #3d3d5e #3d3d5e #c9c9dd;
+  border-color: #e8b4e8 #7a2f7a #7a2f7a #e8b4e8;
   box-shadow: 0 0 0 1px #9a9a9a;
   color: #fff;
   font: bold 11px/18px Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: -0.02em;
   text-decoration: none;
-  text-shadow: 1px 1px 0 #2a2a45;
+  text-shadow: 1px 1px 0 #5a1f5a;
   white-space: nowrap;
   overflow: hidden;
 }
-.nav a:hover { background: #7a7ab3; }
-.nav a:active { border-color: #3d3d5e #c9c9dd #c9c9dd #3d3d5e; }
+.nav a:hover { background: #cd6acd; }
+.nav a:active { border-color: #7a2f7a #e8b4e8 #e8b4e8 #7a2f7a; }
 
-.main { width: 410px; flex: none; }
+.main { width: 300px; flex: none; }
 
 /* Pale, widely spaced name across the top */
 .masthead {
@@ -50,11 +50,11 @@ a:visited { color: #464646; }
 }
 .masthead:visited { color: #f3f3f9; }
 
-.hero { display: block; width: 410px; height: auto; }
+.hero { display: block; width: 300px; height: auto; }
 
 .bar { margin: 0; padding: 4px 7px; font-size: 13px; line-height: 16px; }
-.bar.new { background: #ffcc33; margin-top: 15px; }
-.bar.cta { background: #ff9922; }
+.bar.new { background: #ff6fff; /* Ultra Pink */ margin-top: 15px; }
+.bar.cta { background: #e7accf; /* Pink Pearl */ }
 
 .title { font: 22px Times, "Times New Roman", serif; margin: 0 0 18px; }
 .content { line-height: 1.5; }
