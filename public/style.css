@@ -41,7 +41,7 @@ a:visited { color: #464646; }
   margin: 4px 2px;
   -webkit-mask: var(--mask) center / contain no-repeat;
   mask: var(--mask) center / contain no-repeat;
-  background: #999; /* grey ink */
+  background: #f3f3f9; /* same pale grey as the name header */
 }
 .g1 { --mask: url(images/symbol1.png); }
 .g2 { --mask: url(images/symbol2.png); }
