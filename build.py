@@ -1,4 +1,4 @@
-"""Generate the site's pages from one shared template so the nav stays in sync."""
+"""Generate the site's pages from one shared template so the button column stays in sync."""
 from pathlib import Path
 
 OUT = Path(__file__).parent / "public"
@@ -13,35 +13,34 @@ NAV = [
     ("Misc", "misc.html"),
 ]
 
+HOME_BODY = f"""<img class="hero" src="images/home.jpg" width="410" height="598" alt="">
+<p class="bar new"><b>New:</b> <a href="hats.html">Hats</a> | <a href="hoodies.html">Hoodies</a></p>
+<p class="bar cta"><b>Want to see more?</b> Follow along on <a href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram</a>.</p>"""
+
 PAGES = {
-    "index.html": ("Major Forte Nelson",
-                   '<img src="images/home.jpg" width="410" height="598" alt="">'),
-    "hats.html": ("Hats", "<p>Coming soon.</p>"),
-    "hoodies.html": ("Hoodies", "<p>Coming soon.</p>"),
-    "markers.html": ("Markers", "<p>Coming soon.</p>"),
-    "gallery.html": ("Gallery", "<p>Coming soon.</p>"),
-    "misc.html": ("Misc", "<p>Coming soon.</p>"),
+    "hats.html": "Hats",
+    "hoodies.html": "Hoodies",
+    "markers.html": "Markers",
+    "gallery.html": "Gallery",
+    "misc.html": "Misc",
 }
 
 TEMPLATE = """<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{page_title}</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="page">
 <div class="nav">
-<a class="mark" href="index.html" aria-label="Home"></a>
-<ul>
 {nav}
-</ul>
 </div>
 <div class="main">
-<h1 class="title">{title}</h1>
+<a class="masthead" href="index.html">MAJOR FORTE NELSON</a>
 {body}
+<div class="footer">&copy; mmxxvi mfn</div>
 </div>
 </div>
 </body>
@@ -49,21 +48,22 @@ TEMPLATE = """<!DOCTYPE html>
 """
 
 
-def nav_html(current):
+def nav_html():
     items = []
     for label, href in NAV:
-        external = href.startswith("http")
         attrs = f'href="{href}"'
-        if external:
+        if href.startswith("http"):
             attrs += ' target="_blank" rel="noopener"'
-        if href == current:
-            attrs += ' class="current"'
-        items.append(f"<li><a {attrs}>{label}</a></li>")
+        items.append(f"<a {attrs}>{label}</a>")
     return "\n".join(items)
 
 
-for filename, (title, body) in PAGES.items():
-    page_title = title if filename == "index.html" else f"{title} - Major Forte Nelson"
-    html = TEMPLATE.format(page_title=page_title, nav=nav_html(filename), title=title, body=body)
-    (OUT / filename).write_text(html)
+def write(filename, page_title, body):
+    (OUT / filename).write_text(TEMPLATE.format(page_title=page_title, nav=nav_html(), body=body))
     print("wrote", filename)
+
+
+write("index.html", "Major Forte Nelson", HOME_BODY)
+for filename, title in PAGES.items():
+    body = f'<h1 class="title">{title}</h1>\n<div class="content"><p>Coming soon.</p></div>'
+    write(filename, f"{title} - Major Forte Nelson", body)
