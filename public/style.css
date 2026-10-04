@@ -19,6 +19,9 @@ a:visited { color: #464646; }
   --btn-hover: #7a7ab3;
   --bar1: #ffcc33;
   --bar2: #ff9922;
+  --glyph1: #000;
+  --glyph2: #000;
+  --glyph3: #000;
 }
 
 /* Layout sizes. The button column starts level with the photo, i.e. just
@@ -35,8 +38,16 @@ a:visited { color: #464646; }
 .nav { width: 99px; flex: none; padding: 0 0 0 4px; box-sizing: border-box; }
 
 /* Hand-drawn symbols, one beside each line of the name header. */
-.glyphs { height: var(--masthead-h); margin-bottom: var(--masthead-gap); width: 80px; }
-.glyphs img { display: block; width: 100%; height: calc(var(--masthead-h) / 3); object-fit: contain; box-sizing: border-box; padding: 4px 2px; }
+.glyphs { height: var(--masthead-h); margin-bottom: var(--masthead-gap); width: 80px; display: flex; flex-direction: column; }
+.glyphs .glyph {
+  flex: 1;
+  margin: 4px 2px;
+  -webkit-mask: var(--mask) center / contain no-repeat;
+  mask: var(--mask) center / contain no-repeat;
+}
+.g1 { --mask: url(images/symbol1.png); background: var(--glyph1); }
+.g2 { --mask: url(images/symbol2.png); background: var(--glyph2); }
+.g3 { --mask: url(images/symbol3.png); background: var(--glyph3); }
 .nav a {
   display: block;
   width: 80px; /* fits "Instagram" in real Verdana bold */

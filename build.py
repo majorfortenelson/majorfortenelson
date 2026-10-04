@@ -26,7 +26,8 @@ PAGES = {
 }
 
 # Hand-drawn symbols (cut out of a photo of the drawing), one beside each line of the name.
-GLYPHS = "".join(f'<img src="images/symbol{i}.png" alt="">' for i in (1, 2, 3))
+# Shown via CSS masks so colors.js can tint each one.
+GLYPHS = "".join(f'<span class="glyph g{i}"></span>' for i in (1, 2, 3))
 
 TEMPLATE = """<!DOCTYPE html>
 <html>
