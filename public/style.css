@@ -1,0 +1,83 @@
+/* Classic 2000s personal-site layout: beveled button column + fixed-width content. */
+body {
+  margin: 0;
+  background: #fff;
+  color: #000;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13px;
+}
+a { color: #000099; }
+a:visited { color: #464646; }
+
+/* Box colors. colors.js replaces these with a random scheme on every page load;
+   these are the fallback if JavaScript is off. */
+:root {
+  --btn: #6d6da5;
+  --btn-light: #c9c9dd;
+  --btn-dark: #3d3d5e;
+  --btn-shadow: #2a2a45;
+  --btn-hover: #7a7ab3;
+  --bar1: #ffcc33;
+  --bar2: #ff9922;
+}
+
+/* Layout sizes. The button column starts level with the photo, i.e. just
+   below the name header. */
+:root {
+  --content-w: 250px;
+  --masthead-h: 114px;
+  --masthead-gap: 17px;
+}
+
+.page { display: flex; align-items: flex-start; }
+
+/* Left column of raised buttons */
+.nav { width: 99px; flex: none; padding: calc(var(--masthead-h) + var(--masthead-gap)) 0 0 4px; box-sizing: border-box; }
+.nav a {
+  display: block;
+  width: 67px;
+  height: 20px;
+  box-sizing: border-box;
+  margin-bottom: 1px;
+  padding: 0 0 0 4px;
+  background: var(--btn);
+  border: 1px solid;
+  border-color: var(--btn-light) var(--btn-dark) var(--btn-dark) var(--btn-light);
+  box-shadow: 0 0 0 1px #9a9a9a;
+  color: #fff;
+  font: bold 11px/18px Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 var(--btn-shadow);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.nav a:hover { background: var(--btn-hover); }
+.nav a:active { border-color: var(--btn-dark) var(--btn-light) var(--btn-light) var(--btn-dark); }
+
+.main { width: var(--content-w); flex: none; }
+
+/* Pale name stacked one word per line; letters spread to the photo's width. */
+.masthead {
+  display: block;
+  width: var(--content-w);
+  height: var(--masthead-h);
+  margin: 0 0 var(--masthead-gap);
+  color: #f3f3f9;
+  font: 33px/38px Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+.masthead:visited { color: #f3f3f9; }
+.masthead span { display: flex; justify-content: space-between; }
+.masthead i { font-style: normal; }
+
+.hero { display: block; width: var(--content-w); height: auto; }
+
+.bar { margin: 0; padding: 4px 7px; font-size: 11px; line-height: 14px; }
+.bar.new { background: var(--bar1); margin-top: 15px; }
+.bar.cta { background: var(--bar2); }
+
+.title { font: 22px Times, "Times New Roman", serif; margin: 0 0 18px; }
+.content { line-height: 1.5; }
+
+.footer { margin: 62px 0 40px; color: #c4c4c4; font-size: 11px; }
