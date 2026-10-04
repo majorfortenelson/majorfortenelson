@@ -32,7 +32,11 @@ a:visited { color: #464646; }
 .page { display: flex; align-items: flex-start; }
 
 /* Left column of raised buttons */
-.nav { width: 99px; flex: none; padding: calc(var(--masthead-h) + var(--masthead-gap)) 0 0 4px; box-sizing: border-box; }
+.nav { width: 99px; flex: none; padding: 0 0 0 4px; box-sizing: border-box; }
+
+/* Hand-drawn symbols, one beside each line of the name header. */
+.glyphs { height: var(--masthead-h); margin-bottom: var(--masthead-gap); width: 80px; }
+.glyphs svg { display: block; width: 100%; height: calc(var(--masthead-h) / 3); color: #000; }
 .nav a {
   display: block;
   width: 80px; /* fits "Instagram" in real Verdana bold */
