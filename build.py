@@ -2,7 +2,7 @@
 from pathlib import Path
 
 OUT = Path(__file__).parent / "public"
-INSTAGRAM = "https://www.instagram.com/"  # TODO: replace with your profile URL
+INSTAGRAM = "https://www.instagram.com/majorfortenelson/"
 
 NAV = [
     ("Hats", "hats.html"),

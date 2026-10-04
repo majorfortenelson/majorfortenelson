@@ -40,14 +40,13 @@ a:visited { color: #464646; }
 /* Pale, widely spaced name across the top */
 .masthead {
   display: block;
-  height: 50px;
+  height: 64px;
   margin: 0 0 17px;
   color: #f3f3f9;
-  font: 25px/50px Helvetica, Arial, sans-serif;
-  letter-spacing: 0.265em;
+  font: 40px/64px Helvetica, Arial, sans-serif;
+  letter-spacing: 0.2em;
   text-decoration: none;
   white-space: nowrap;
-  overflow: hidden;
 }
 .masthead:visited { color: #f3f3f9; }
 
